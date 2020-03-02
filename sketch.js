@@ -1,17 +1,27 @@
 var car;
+var song;
+var picture;
+
+function preload() {
+song = loadSound("ending.mp3");
+}
+
+let img;
 
 function setup() {
-  createCanvas(300, 300);
+  createCanvas(550, 455);
   car = new Car();
   rectMode(CENTER);
+  song.play();
+  img = loadImage('maze.jpg')
 }
 
 function draw() {
   background(170);
+  image(img,0,0);
   car.display();
   car.move();
   car.loop();
-  
 }
 
 function keyPressed() {
